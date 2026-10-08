@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink-950: #0b0f14;
+  --color-ink-900: #0e141b;
+  --color-ink-800: #121821;
+  --color-ink-700: #232e3c;
+  --color-ink-600: #2b394a;
+  --color-ink-400: #8b9bb0;
+
+  --color-brand-400: #34d3a0;
+  --color-brand-500: #2bb98a;
+  --color-brand-900: #12302a;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-ink-950 font-sans text-slate-100 antialiased;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-ink-950 transition-colors hover:bg-brand-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-400 disabled:cursor-not-allowed disabled:opacity-40;
+  }
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-slate-300;
+  }
+  .field-input {
+    @apply w-full rounded-lg border border-ink-600 bg-ink-950 px-3.5 py-2.5 text-sm text-slate-100 placeholder:text-ink-400 focus:border-brand-500 focus:outline-2 focus:outline-offset-0 focus:outline-brand-500/30;
+  }
+  .card {
+    @apply rounded-2xl border border-ink-700 bg-ink-800;
+  }
+}
